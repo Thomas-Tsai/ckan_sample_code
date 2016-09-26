@@ -4,9 +4,12 @@ import urllib
 import json
 import pprint
 
+siteurl="http://ckan1.nchc.org.tw:5000/"
+apiuri=siteurl+"api/action/package_create"
+
 # Put the details of the dataset we're going to create into a dict.
 dataset_dict = {
-    'name': 'my_dataset_name3',
+    'name': 'my_dataset_name5',
     'notes': 'A long description of my dataset',
     'owner_org':'std'
 }
@@ -15,7 +18,7 @@ dataset_dict = {
 data_string = urllib.quote(json.dumps(dataset_dict))
 
 # We'll use the package_create function to create a new dataset.
-request = urllib2.Request('http://ckan1.nchc.org.tw:5000/api/action/package_create')
+request = urllib2.Request(apiuri)
 
 # Creating a dataset requires an authorization header.
 # Replace *** with your API key, from your user account on the CKAN site
